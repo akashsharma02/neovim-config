@@ -3,6 +3,13 @@ vim.g.mapleader = " "
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
+-- Normal --
+-- Better window navigation
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
 keymap("n", "<C-Down>", ":resize +2<CR>", opts)
@@ -24,9 +31,14 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
-
--- Telescope
+-- -- Telescope
 keymap("n", "<Leader><space>", "<cmd>lua require('telescope.builtin').find_files()<cr>", opts)
 keymap("n", "<Leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>", opts)
 keymap("n", "<Leader>fb", "<cmd>lua require('telescope.builtin').buffers()<cr>", opts)
 keymap("n", "<Leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<cr>", opts)
+
+-- NvimTree
+keymap("n", "<Leader>tt", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<Leader>tr", ":NvimTreeRefresh<cr>", opts)
+keymap("n", "<Leader>tn", ":NvimTreeFindFile<cr>", opts)
+

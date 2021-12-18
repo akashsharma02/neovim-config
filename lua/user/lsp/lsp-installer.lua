@@ -8,6 +8,7 @@ local servers = {
   "clangd",
   "pylsp",
   "cmake",
+  "texlab",
 }
 
 for _, name in pairs(servers) do

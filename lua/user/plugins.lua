@@ -45,6 +45,10 @@ function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "numToStr/comment.nvim" -- Easily comment stuff
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+  use 'lukas-reineke/indent-blankline.nvim'
 
   -- Colorscheme
   use "flazz/vim-colorschemes"
@@ -66,9 +70,23 @@ function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+  use "jose-elias-alvarez/null-ls.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+
+  -- TreeSitter
+  use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
+
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+
+  -- LuaLine
+  use "nvim-lualine/lualine.nvim"
+
+  -- which-key
+  use "folke/which-key.nvim"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
