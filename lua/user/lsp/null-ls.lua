@@ -20,7 +20,6 @@ null_ls.setup({
         formatting.isort,
         formatting.cmake_format,
         diagnostics.flake8,
-        diagnostics.cppcheck,
     -- diagnostics.flake8
 	},
 })
