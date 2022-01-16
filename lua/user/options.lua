@@ -23,7 +23,7 @@ local options = {
 	splitright = true, 				-- split window right
 	swapfile = true,				-- create swap file
 	updatetime = 300, 				-- length of time nvim waits to trigger commands after typing stops
-    timeoutlen = 100,               -- Required timeoutlen to trigger which-key appropriately
+    timeoutlen = 300,               -- Required timeoutlen to trigger which-key appropriately
     termguicolors = true,           -- Enable term gui colors
 }
 

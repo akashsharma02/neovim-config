@@ -46,6 +46,7 @@ function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "numToStr/comment.nvim" -- Easily comment stuff
+  use "christoomey/vim-tmux-navigator"
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'lukas-reineke/indent-blankline.nvim'
