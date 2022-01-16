@@ -16,8 +16,6 @@ null_ls.setup({
                 filetypes = { "html", "json", "yaml", "markdown" },
                 extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" }
             }),
-        formatting.isort,
         formatting.cmake_format,
-        diagnostics.cppcheck,
 	},
 })

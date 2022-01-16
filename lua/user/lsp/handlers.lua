@@ -15,7 +15,7 @@ M.setup = function()
 
     local config = {
         -- disable virtual text
-        virtual_text = false,
+        virtual_text = true,
         -- show signs
         signs = {
             active = signs,
@@ -69,7 +69,7 @@ local function lsp_keymaps(bufnr)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', ';lk', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', ';wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     buf_set_keymap('n', ';wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
     buf_set_keymap('n', ';D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
@@ -83,10 +83,27 @@ local function lsp_keymaps(bufnr)
     buf_set_keymap('n', ';f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+local function format(client)
+    if client.resolved_capabilities.document_formatting then
+        vim.api.nvim_exec(
+            [[
+            augroup Format
+            autocmd! * <buffer>
+            autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync()
+            augroup END
+            ]],
+            false
+        )
+    end
+end
+
+
 M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
+    format(client)
 end
+
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
