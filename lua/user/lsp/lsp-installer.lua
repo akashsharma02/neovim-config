@@ -9,6 +9,7 @@ local servers = {
   "pylsp",
   "cmake",
   "texlab",
+  "sumneko_lua",
 }
 
 for _, name in pairs(servers) do
@@ -28,6 +29,17 @@ lsp_installer.on_server_ready(function(server)
 		on_attach = require("user.lsp.handlers").on_attach,
 		capabilities = require("user.lsp.handlers").capabilities,
 	}
+
+    if server.name == "pylsp" then
+        opts.settings = {
+            pylsp = {
+                plugins = {
+                    jedi = { environment = vim.fn.exepath("python3")},
+                    pycodestyle = { maxLineLength = 160 },
+                }
+        }
+    }
+    end
 
 	-- This setup() function is exactly the same as lspconfig's setup function.
 	-- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md

@@ -33,3 +33,15 @@ end
 
 vim.opt.shortmess:append('c')
 vim.opt.clipboard:append("unnamedplus")	-- allow neovim to access system clipboard
+
+local global_options = {
+    python3_host_prog = "/home/akashsharma/anaconda3/bin/python3"
+}
+
+for k, v in pairs(global_options) do
+    vim.g[k] = v
+end
+
+
+
+
