@@ -35,7 +35,7 @@ lsp_installer.on_server_ready(function(server)
             pylsp = {
                 plugins = {
                     jedi = { environment = vim.fn.exepath("python3")},
-                    pycodestyle = { maxLineLength = 160 },
+                    flake8 = { maxLineLength = 160 },
                 }
         }
     }
