@@ -50,9 +50,15 @@ return packer.startup(
         use 'kyazdani42/nvim-tree.lua'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'christoomey/vim-tmux-navigator'
+        use 'ray-x/lsp_signature.nvim'
 
         -- Colorscheme
         use "flazz/vim-colorschemes"
+        use({
+            "catppuccin/nvim",
+            as = "catppuccin"
+        })
+        use 'rebelot/kanagawa.nvim'
 
         -- Completion plugins
         use "hrsh7th/nvim-cmp"

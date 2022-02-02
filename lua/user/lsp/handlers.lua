@@ -98,10 +98,12 @@ local function format(client)
     end
 end
 
+local lsp_signature = require('lsp_signature')
 
 M.on_attach = function(client, bufnr)
     lsp_keymaps(bufnr)
     lsp_highlight_document(client)
+    lsp_signature.on_attach()
     format(client)
 end
 
