@@ -81,6 +81,7 @@ return packer.startup(
 
         -- Telescope
         use "nvim-telescope/telescope.nvim"
+        use "nvim-telescope/telescope-media-files.nvim"
 
         -- TreeSitter
         use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
@@ -94,6 +95,12 @@ return packer.startup(
 
         -- which-key
         use "folke/which-key.nvim"
+
+        use {
+            'iamcco/markdown-preview.nvim',
+            run = function() vim.fn['mkdp#util#install']() end,
+            ft = {'markdown'}
+}
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

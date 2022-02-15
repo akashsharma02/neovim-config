@@ -87,6 +87,10 @@ telescope.setup {
     -- builtin picker
   },
   extensions = {
+        media_files = {
+            filetypes = {"png", "webp", "jpg", "jpeg"},
+            find_cmd = "rg",
+        }
     -- Your extension configuration goes here:
     -- extension_name = {
     --   extension_config_key = value,

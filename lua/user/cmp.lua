@@ -8,7 +8,6 @@ if not snip_status_ok then
     return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
@@ -109,8 +108,8 @@ cmp.setup {
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        luasnip = "[Snippet]",
         buffer = "[Buffer]",
+        luasnip = "[Snippet]",
         path = "[Path]",
         cmp_tabnine = "[TabNine]",
         nvim_diagnostic = "[Diagnostic]",
@@ -122,8 +121,8 @@ cmp.setup {
   },
   sources = {
     { name = "nvim_lsp" },
-    { name = "luasnip" },
     { name = "buffer" },
+    { name = "luasnip" },
     { name = "path" },
     { name = "cmp_tabnine" },
     { name = "nvim_diagnostic" },
