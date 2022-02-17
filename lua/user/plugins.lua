@@ -51,13 +51,10 @@ return packer.startup(
         use 'lukas-reineke/indent-blankline.nvim'
         use 'christoomey/vim-tmux-navigator'
         use 'ray-x/lsp_signature.nvim'
+        use 'lervag/vimtex'
 
         -- Colorscheme
         use "flazz/vim-colorschemes"
-        use({
-            "catppuccin/nvim",
-            as = "catppuccin"
-        })
         use 'rebelot/kanagawa.nvim'
 
         -- Completion plugins
