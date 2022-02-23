@@ -52,6 +52,7 @@ return packer.startup(
         use 'christoomey/vim-tmux-navigator'
         use 'ray-x/lsp_signature.nvim'
         use 'lervag/vimtex'
+        use 'windwp/nvim-autopairs'
 
         -- Colorscheme
         use "flazz/vim-colorschemes"
@@ -82,6 +83,7 @@ return packer.startup(
 
         -- TreeSitter
         use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
+        use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter" })
 
 
         -- Git
