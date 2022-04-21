@@ -21,8 +21,6 @@ vim.g.nvim_tree_icons = {
   },
 }
 
-vim.g.nvim_tree_disable_window_picker = 1
-
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return
@@ -100,6 +98,13 @@ nvim_tree.setup {
     cmd = "trash",
     require_confirm = true,
   },
+  actions = {
+    open_file = {
+      window_picker = {
+        enable = false
+      }
+    }
+},
   quit_on_open = 0,
   git_hl = 1,
   root_folder_modifier = ":t",
