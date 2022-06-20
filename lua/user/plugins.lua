@@ -48,7 +48,7 @@ return packer.startup(
         use {
             'numToStr/comment.nvim',
             tag = 'v0.6'
-        }-- Easily comment stuff
+        } -- Easily comment stuff
         use 'kyazdani42/nvim-web-devicons'
         use 'kyazdani42/nvim-tree.lua'
         use 'lukas-reineke/indent-blankline.nvim'
@@ -67,7 +67,7 @@ return packer.startup(
         use "hrsh7th/cmp-path"
         use "hrsh7th/cmp-cmdline"
         use "hrsh7th/cmp-nvim-lsp"
-        use {"tzachar/cmp-tabnine", run="./install.sh", requires = "hrsh7th/nvim-cmp"}
+        use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
         use "saadparwaiz1/cmp_luasnip"
 
 
@@ -85,7 +85,7 @@ return packer.startup(
         use "nvim-telescope/telescope-media-files.nvim"
 
         -- TreeSitter
-        use {"nvim-treesitter/nvim-treesitter", run=":TSUpdate"}
+        use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
         use({ "yioneko/nvim-yati", requires = "nvim-treesitter/nvim-treesitter" })
 
 
@@ -101,8 +101,8 @@ return packer.startup(
         use {
             'iamcco/markdown-preview.nvim',
             run = function() vim.fn['mkdp#util#install']() end,
-            ft = {'markdown'}
-}
+            ft = { 'markdown' }
+        }
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
