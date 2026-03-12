@@ -1,6 +1,6 @@
 return {
     "mfussenegger/nvim-dap-python",
     config = function()
-        require("dap-python").setup("~/miniforge3/envs/debugpy/bin/python")
+        require("dap-python").setup(vim.fn.expand("$HOME/miniforge3/bin/python3"))
     end,
 }
